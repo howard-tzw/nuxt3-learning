@@ -7,4 +7,5 @@ module.exports = {
 	semi: false, // 每個語句的結尾不需要分號
 	tabWidth: 4,
 	useTabs: true,
+	plugins: ['prettier-plugin-tailwindcss'],
 }
