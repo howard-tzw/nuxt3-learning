@@ -1,16 +1,21 @@
 <template>
-	<div>
-		<NuxtWelcome />
-		<div class="bg-white py-24">
-			<div class="flex flex-col items-center">
-				<h1 class="text-6xl font-semibold text-blue-600">2022 iThome</h1>
-				<p class="mt-4 text-9xl font-bold text-gray-900">鐵人賽</p>
+	<div class="m-4 bg-white">
+		<div class="flex flex-col items-center">
+			<div class="mt-8 flex items-center">
+				<input id="show-button" v-model="useRound" name="show-button" type="checkbox" class="h-5 w-5" />
+				<label for="show-button" class="ml-2 block text-base text-slate-800">使用圓角按鈕</label>
 			</div>
+			<component :is="useRound ? RoundButton : BaseButton" />
 		</div>
+		<p class="pb-4 text-2xl text-slate-600">這裡是最外層 app.vue</p>
+		<NuxtLayout>
+			<NuxtPage />
+		</NuxtLayout>
 	</div>
 </template>
 
 <script lang="ts" setup>
-const year: number = '2022'
-const title = `${year} iThome 鐵人賽`
+const useRound = ref(false)
+const BaseButton = resolveComponent('BaseApplyButton')
+const RoundButton = resolveComponent('RoundApplyButton')
 </script>
