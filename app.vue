@@ -8,6 +8,9 @@
 			<component :is="useRound ? RoundButton : BaseButton" />
 		</div>
 		<p class="pb-4 text-2xl text-slate-600">這裡是最外層 app.vue</p>
+		<div class="flex justify-center">
+			<Icon name="logos:nuxt" size="360" />
+		</div>
 		<NuxtLayout>
 			<NuxtPage />
 		</NuxtLayout>
