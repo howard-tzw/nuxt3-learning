@@ -1,24 +1,18 @@
 <template>
-	<div class="m-4 bg-white">
-		<div class="flex flex-col items-center">
-			<div class="mt-8 flex items-center">
-				<input id="show-button" v-model="useRound" name="show-button" type="checkbox" class="h-5 w-5" />
-				<label for="show-button" class="ml-2 block text-base text-slate-800">使用圓角按鈕</label>
-			</div>
-			<component :is="useRound ? RoundButton : BaseButton" />
-		</div>
-		<p class="pb-4 text-2xl text-slate-600">這裡是最外層 app.vue</p>
-		<div class="flex justify-center">
-			<Icon name="logos:nuxt" size="360" />
-		</div>
-		<NuxtLayout>
-			<NuxtPage />
-		</NuxtLayout>
-	</div>
+	<NuxtLayout>
+		<NuxtPage />
+	</NuxtLayout>
 </template>
 
-<script lang="ts" setup>
-const useRound = ref(false)
-const BaseButton = resolveComponent('BaseApplyButton')
-const RoundButton = resolveComponent('RoundApplyButton')
-</script>
+<script lang="ts" setup></script>
+
+<style lang="scss">
+@import '@inkline/inkline/css/variables';
+@import '@inkline/inkline/css/mixins';
+
+:root {
+	--color--primary--h: 195deg;
+	--color--primary--s: 77%;
+	--color--primary--l: 39%;
+}
+</style>
