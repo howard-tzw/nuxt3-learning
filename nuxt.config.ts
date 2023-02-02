@@ -7,4 +7,10 @@ export default defineNuxtConfig({
 	inkline: {
 		// Plugin options (optional)
 	},
+	runtimeConfig: {
+		apiSecret: ':P',
+		public: {
+			apiBase: '/api',
+		},
+	},
 })

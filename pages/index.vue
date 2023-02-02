@@ -7,6 +7,9 @@
 			<p><nuxt-link to="/count/useLazyAsyncData">useLazyAsyncData</nuxt-link></p>
 			<p><nuxt-link to="/counter/increment">counter</nuxt-link></p>
 			<p><nuxt-link to="/counter/surprise">surprise</nuxt-link></p>
+			<div class="my-4 flex flex-col space-y-4">
+				<NuxtLink to="/config">前往 /config</NuxtLink>
+			</div>
 		</i-header>
 
 		<div class="flex p-10">
