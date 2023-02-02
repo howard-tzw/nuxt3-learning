@@ -5,6 +5,8 @@
 			<h3>這邊可以放文字，請提供相關訊息</h3>
 			<p><nuxt-link to="/count/useAsyncData">useAsyncData</nuxt-link></p>
 			<p><nuxt-link to="/count/useLazyAsyncData">useLazyAsyncData</nuxt-link></p>
+			<p><nuxt-link to="/counter/increment">counter</nuxt-link></p>
+			<p><nuxt-link to="/counter/surprise">surprise</nuxt-link></p>
 		</i-header>
 
 		<div class="flex p-10">

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@inkline/nuxt'],
+	modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@inkline/nuxt', '@pinia/nuxt'],
 	typescript: {
 		typeCheck: false,
 	},
