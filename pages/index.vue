@@ -1,48 +1,65 @@
 <template>
 	<div>
-		<i-header class="_text-align:center">
-			<h1>有 AliceLaws 律事無障礙</h1>
+		<i-header class="">
+			<h1 class="text-3xl">有 AliceLaws 律事無障礙</h1>
 			<h3>這邊可以放文字，請提供相關訊息</h3>
-			<p><nuxt-link to="/count/useAsyncData">useAsyncData</nuxt-link></p>
-			<p><nuxt-link to="/count/useLazyAsyncData">useLazyAsyncData</nuxt-link></p>
-			<p><nuxt-link to="/counter/increment">counter</nuxt-link></p>
-			<p><nuxt-link to="/counter/surprise">surprise</nuxt-link></p>
-			<div class="my-4 flex flex-col space-y-4">
-				<NuxtLink to="/config">前往 /config</NuxtLink>
-			</div>
-
-			<NuxtErrorBoundary>
-				<!-- 這個按鈕元件可以拋出一個錯誤 -->
-				<ButtonOOPS />
-
-				<template #error="{ error }">
-					<p class="my-4 text-xl text-gray-500">這裡是發生錯誤時，才會渲染出來的地方</p>
-					<button
-						type="button"
-						class="inline-flex items-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-700 hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-						@click="fixIssue(error)"
-					>
-						修正錯誤
-					</button>
-				</template>
-			</NuxtErrorBoundary>
+			<i-button>閱讀更多</i-button>
 		</i-header>
+
+		<div class="absolute top-60 right-40 flex w-2/6 rounded-xl border bg-white shadow-xl">
+			<div class="container p-7">
+				<div class="mb-4 text-center text-xl">律師在哪裡？</div>
+
+				<i-tabs v-model="activeTab" class="">
+					<template #header>
+						<i-tab-title for="tab-1">律師姓名</i-tab-title>
+						<i-tab-title for="tab-2">簡易查詢</i-tab-title>
+					</template>
+
+					<i-tab name="tab-1">
+						<i-input v-model="lawyerName" placeholder="請輸入律師姓名" />
+					</i-tab>
+					<i-tab name="tab-2">
+						<i-input placeholder="請輸入..." />
+					</i-tab>
+				</i-tabs>
+
+				<div class="mt-6 flex justify-center">
+					<i-button>搜尋</i-button>
+				</div>
+			</div>
+		</div>
 
 		<div class="flex p-10">
 			<div class="p-10">
-				<p>判決資料庫數量</p>
-				<p>26156321</p>
+				<p class="">判決資料庫數量</p>
+				<p class="text-4xl">26156321</p>
 			</div>
 			<div class="p-10">
 				<p>律師資料數量</p>
-				<p>26156321</p>
+				<p class="text-4xl">26156321</p>
 			</div>
 		</div>
 
 		<i-header class="_text-align:center">
 			<h1>關於 alicelaws</h1>
-			<nuxt-link to="/about/useFetch">useFetch</nuxt-link>
+			<p>
+				eque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." "There is
+				no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..
+			</p>
+			<i-button>閱讀更多</i-button>
 		</i-header>
+
+		<div class="flex flex-col items-center justify-center p-7">
+			<p class="mb-4 text-xl">對造律師/承審法官</p>
+
+			<div class="flex flex-row items-center">
+				<i-input placeholder="請輸入..." />
+				<p>與</p>
+				<i-input placeholder="請輸入..." />
+			</div>
+			<i-button class="mt-5">查詢</i-button>
+		</div>
 	</div>
 </template>
 
@@ -50,4 +67,6 @@
 const fixIssue = error => {
 	error.value = null
 }
+const activeTab = ref('')
+const lawyerName = ref('')
 </script>

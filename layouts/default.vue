@@ -9,7 +9,7 @@
 		</i-layout-content>
 
 		<i-layout-footer>
-			<div class="flex items-center justify-center p-20">footer</div>
+			<BaseFooter />
 		</i-layout-footer>
 	</i-layout>
 </template>
